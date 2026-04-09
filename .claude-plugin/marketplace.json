@@ -1,0 +1,28 @@
+{
+  "name": "mailx-skills",
+  "owner": {
+    "name": "MailX",
+    "email": "hello@themailx.com"
+  },
+  "metadata": {
+    "description": "MailX email deliverability skills for AI agents — SPF, DKIM, DMARC, BIMI, blacklists, SMTP/IMAP and more.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "email-deliverability",
+      "source": "./plugins/email-deliverability",
+      "description": "Diagnoses and fixes email deliverability issues by checking SPF, DKIM, DMARC, BIMI records, blacklist status, and SMTP/IMAP server connectivity. Generates DNS records for email authentication.",
+      "version": "1.2.0",
+      "author": {
+        "name": "MailX",
+        "email": "hello@themailx.com"
+      },
+      "homepage": "https://tools.themailx.com/mcp/docs",
+      "repository": "https://github.com/Mailwarm/mailx-skills",
+      "license": "MIT",
+      "keywords": ["email", "deliverability", "spf", "dkim", "dmarc", "bimi", "mcp", "blacklist"],
+      "category": "productivity"
+    }
+  ]
+}
