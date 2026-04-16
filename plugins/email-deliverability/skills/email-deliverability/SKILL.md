@@ -2,12 +2,12 @@
 name: email-deliverability
 description: Diagnoses and fixes email deliverability issues by checking SPF, DKIM, DMARC, BIMI records, blacklist status, and SMTP/IMAP server connectivity. Generates DNS records for email authentication. Activates when the task involves email going to spam, domain reputation, DNS authentication setup, mail server configuration, sender verification, or email infrastructure troubleshooting.
 license: MIT
-compatibility: "Requires network access to the MailX MCP server (mailx) at https://tools.themailx.com/mcp"
+compatibility: "Requires network access to the MailX MCP server (mailx) at https://themailx.com/mcp"
 metadata:
   author: mailx
   version: 1.2
   source: dynamic
-  source_url: "https://tools.themailx.com/skills/email-deliverability/SKILL.md"
+  source_url: "https://themailx.com/skills/email-deliverability/SKILL.md"
 ---
 
 # Email Deliverability
@@ -23,15 +23,20 @@ All tools are on the `mailx` MCP server. Use fully qualified names (`mailx:tool-
 | `mailx:bimi-check` | Check if a domain has a valid BIMI (Brand Indicators for Message Identification) DNS record. BIMI allows brands to display their logo next to authenticated emails in supporting email clients. |
 | `mailx:bimi-host` | Host and serve your BIMI SVG file for email authentication |
 | `mailx:blacklist-check` | Check if a domain or IP address is listed in popular email blacklists (DNSBLs). Being blacklisted can severely impact email deliverability. |
+| `mailx:cname-lookup` | Look up CNAME (Canonical Name) records for a domain. Shows where a hostname aliases to. |
 | `mailx:dkim-check` | Check if a domain has a valid DKIM (DomainKeys Identified Mail) DNS record for a given selector. DKIM allows the receiver to verify that an email was sent by the domain owner. |
 | `mailx:dmarc-check` | Check if a domain has a valid DMARC (Domain-based Message Authentication, Reporting & Conformance) DNS record. DMARC tells receiving servers what to do with emails that fail SPF or DKIM checks. |
 | `mailx:dmarc-generate` | Generate a DMARC DNS record for a domain. Returns the record name, value, and type ready to be added to DNS. |
+| `mailx:dns-lookup` | Look up all DNS records for a domain in one query. Returns A, AAAA, CNAME, MX, NS, TXT, and SOA records. |
 | `mailx:imap-check` | Test an IMAP server connection by attempting to connect and authenticate. Use this to verify email receiving configuration. |
 | `mailx:imap-finder` | Look up IMAP server settings (host, port, encryption) for a given email provider. Use this to find the correct IMAP configuration for services like Gmail, Outlook, Yahoo, etc. |
+| `mailx:mx-lookup` | Look up MX (Mail Exchanger) records for a domain. Returns the mail servers and their priorities. |
+| `mailx:ptr-lookup` | Reverse DNS lookup. Find the hostname associated with an IP address. A valid PTR record is important for email sending reputation. |
 | `mailx:smtp-check` | Test an SMTP server connection by attempting to connect and authenticate. Optionally sends a test email to verify full sending capability. |
 | `mailx:smtp-finder` | Look up SMTP server settings (host, port, encryption) for a given email provider. Use this to find the correct SMTP configuration for services like Gmail, Outlook, SendGrid, etc. |
 | `mailx:spf-check` | Check if a domain has a valid SPF (Sender Policy Framework) DNS record. SPF specifies which mail servers are authorized to send email on behalf of a domain. |
 | `mailx:spf-generate` | Generate an SPF DNS record for a domain based on the email provider being used. Returns the record name, value, and type ready to be added to DNS. |
+| `mailx:txt-lookup` | Look up all TXT records for a domain. TXT records contain SPF policies, domain verification tokens, DKIM keys, and other metadata. |
 
 ## Workflow: Full Deliverability Audit
 
@@ -48,7 +53,7 @@ Audit Progress:
 
 1. **DNS checks**: Run `mailx:spf-check`, `mailx:dmarc-check`, and `mailx:dkim-check` for the domain. For DKIM, ask for the selector if unknown — try common ones: `google`, `default`, `selector1`, `selector2`, `k1`.
 2. **Blacklist**: Run `mailx:blacklist-check`.
-3. **Analyze**: See [references/diagnosis.md](https://tools.themailx.com/skills/email-deliverability/references/diagnosis.md) for interpreting combined results.
+3. **Analyze**: See [references/diagnosis.md](https://themailx.com/skills/email-deliverability/references/diagnosis.md) for interpreting combined results.
 4. **Fix**: Generate missing records with `mailx:spf-generate` or `mailx:dmarc-generate`.
 5. **Report**: Lead with a pass/fail summary. For each failure, give the exact DNS record to add in copy-pasteable format.
 
