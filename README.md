@@ -1,6 +1,6 @@
 # MailX Skills
 
-Free Agent Skills from [MailX](https://tools.themailx.com) that teach AI agents how to diagnose and fix email deliverability issues using the [MailX MCP server](https://tools.themailx.com/mcp).
+Free Agent Skills from [MailX](https://themailx.com) that teach AI agents how to diagnose and fix email deliverability issues using the [MailX MCP server](https://themailx.com/mcp).
 
 > **What's a Skill?** A `SKILL.md` file with workflow instructions an AI agent loads on demand. The format is an open standard adopted by Anthropic (Claude) and OpenAI (Codex CLI, ChatGPT). Learn more at [agentskills.io](https://agentskills.io).
 
@@ -43,20 +43,20 @@ Then reference the returned `skill_id` when calling the Messages API.
 
 ## Requirements
 
-The skill requires the [MailX MCP server](https://tools.themailx.com/mcp) for the actual tool execution. To install the MCP server in Claude Desktop / Cursor / Claude Code:
+The skill requires the [MailX MCP server](https://themailx.com/mcp) for the actual tool execution. To install the MCP server in Claude Desktop / Cursor / Claude Code:
 
 ```json
 {
   "mcpServers": {
     "mailx": {
       "type": "http",
-      "url": "https://tools.themailx.com/mcp"
+      "url": "https://themailx.com/mcp"
     }
   }
 }
 ```
 
-Full setup guide: [tools.themailx.com/mcp/docs](https://tools.themailx.com/mcp/docs)
+Full setup guide: [themailx.com/mcp/docs](https://themailx.com/mcp/docs)
 
 ## What the agent can do once installed
 
@@ -84,7 +84,7 @@ mailx-skills/
 
 ## Versioning
 
-The current `SKILL.md` is dynamically generated from the live MailX tool catalog at [tools.themailx.com/skills/email-deliverability/SKILL.md](https://tools.themailx.com/skills/email-deliverability/SKILL.md). This repo is the static, versioned distribution snapshot used by Claude Code marketplace installs.
+The current `SKILL.md` is dynamically generated from the live MailX tool catalog at [themailx.com/skills/email-deliverability/SKILL.md](https://themailx.com/skills/email-deliverability/SKILL.md). This repo is the static, versioned distribution snapshot used by Claude Code marketplace installs.
 
 ## License
 
@@ -92,8 +92,8 @@ MIT — see [LICENSE](./LICENSE)
 
 ## Links
 
-- **MailX Tools**: [tools.themailx.com](https://tools.themailx.com)
-- **MCP Integration Docs**: [tools.themailx.com/mcp/docs](https://tools.themailx.com/mcp/docs)
-- **Live SKILL.md**: [tools.themailx.com/skills/email-deliverability/SKILL.md](https://tools.themailx.com/skills/email-deliverability/SKILL.md)
-- **Skill discovery**: [tools.themailx.com/.well-known/skills.json](https://tools.themailx.com/.well-known/skills.json)
+- **MailX Tools**: [themailx.com](https://themailx.com)
+- **MCP Integration Docs**: [themailx.com/mcp/docs](https://themailx.com/mcp/docs)
+- **Live SKILL.md**: [themailx.com/skills/email-deliverability/SKILL.md](https://themailx.com/skills/email-deliverability/SKILL.md)
+- **Skill discovery**: [themailx.com/.well-known/skills.json](https://themailx.com/.well-known/skills.json)
 - **Agent Skills spec**: [agentskills.io](https://agentskills.io)
