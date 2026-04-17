@@ -6,7 +6,7 @@
     "name": "MailX",
     "email": "hello@themailx.com"
   },
-  "homepage": "https://tools.themailx.com/mcp/docs",
+  "homepage": "https://themailx.com/mcp/docs",
   "repository": "https://github.com/Mailwarm/mailx-skills",
   "license": "MIT",
   "keywords": ["email", "deliverability", "spf", "dkim", "dmarc", "bimi", "mcp"]
