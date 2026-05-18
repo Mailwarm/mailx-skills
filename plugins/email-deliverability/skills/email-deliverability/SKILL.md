@@ -21,7 +21,6 @@ All tools are on the `mailx` MCP server. Use fully qualified names (`mailx:tool_
 | Tool | Purpose |
 |------|---------|
 | `mailx:bimi_check` | Check if a domain has a valid BIMI (Brand Indicators for Message Identification) DNS record. BIMI allows brands to display their logo next to authenticated emails in supporting email clients. |
-| `mailx:bimi_host` | Host and serve your BIMI SVG file for email authentication |
 | `mailx:blacklist_check` | Check if a domain or IP address is listed in popular email blacklists (DNSBLs). Being blacklisted can severely impact email deliverability. |
 | `mailx:cname_lookup` | Look up CNAME (Canonical Name) records for a domain. Shows where a hostname aliases to. |
 | `mailx:dkim_check` | Check if a domain has a valid DKIM (DomainKeys Identified Mail) DNS record for a given selector. DKIM allows the receiver to verify that an email was sent by the domain owner. |
