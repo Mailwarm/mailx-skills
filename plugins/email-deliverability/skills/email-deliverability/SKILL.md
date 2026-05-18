@@ -31,7 +31,7 @@ All tools are on the `mailx` MCP server. Use fully qualified names (`mailx:tool_
 | `mailx:imap_finder` | Look up IMAP server settings (host, port, encryption) for a given email provider. Use this to find the correct IMAP configuration for services like Gmail, Outlook, Yahoo, etc. |
 | `mailx:mx_lookup` | Look up MX (Mail Exchanger) records for a domain. Returns the mail servers and their priorities. |
 | `mailx:ptr_lookup` | Reverse DNS lookup. Find the hostname associated with an IP address. A valid PTR record is important for email sending reputation. |
-| `mailx:smtp_check` | Test an SMTP server connection by attempting to connect and authenticate. Optionally sends a test email to verify full sending capability. |
+| `mailx:smtp_check` | Test an SMTP server connection by attempting to connect and authenticate. If from_email and to_email are provided, the tool may attempt to send a test email. Only provide these fields if you are authorized to send from the account and intentionally want to test full sending capability. |
 | `mailx:smtp_finder` | Look up SMTP server settings (host, port, encryption) for a given email provider. Use this to find the correct SMTP configuration for services like Gmail, Outlook, SendGrid, etc. |
 | `mailx:spf_check` | Check if a domain has a valid SPF (Sender Policy Framework) DNS record. SPF specifies which mail servers are authorized to send email on behalf of a domain. |
 | `mailx:spf_generate` | Generate an SPF DNS record for a domain based on the email provider being used. Returns the record name, value, and type ready to be added to DNS. |
