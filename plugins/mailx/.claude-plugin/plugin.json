@@ -9,6 +9,7 @@
   },
   "homepage": "https://themailx.com/docs/mcp",
   "privacyPolicyUrl": "https://themailx.com/privacy-policy",
+  "termsOfServiceUrl": "https://themailx.com/terms-of-use",
   "repository": "https://github.com/Mailwarm/mailx-skills",
   "license": "MIT",
   "keywords": [
