@@ -12,7 +12,7 @@
 
 ### Emails going to spam
 
-Check in order — stop at the first hit:
+Check in order: stop at the first hit.
 
 1. **No SPF** → generate immediately
 2. **No DMARC** → generate with `p=none`
@@ -24,7 +24,7 @@ Check in order — stop at the first hit:
 
 1. DMARC `p=reject` → unauthorized senders silently dropped
 2. Blacklisted → some lists cause outright rejection
-3. SMTP not sending → test with `mailx:smtp-check`
+3. SMTP not sending → verify the server settings (host, port, encryption) with `smtp_finder`
 
 ### Multiple SPF records
 

@@ -8,7 +8,17 @@
     "url": "https://themailx.com"
   },
   "homepage": "https://themailx.com/docs/mcp",
+  "privacyPolicyUrl": "https://themailx.com/privacy-policy",
   "repository": "https://github.com/Mailwarm/mailx-skills",
   "license": "MIT",
-  "keywords": ["email", "deliverability", "spf", "dkim", "dmarc", "bimi", "blacklist", "dns"]
+  "keywords": [
+    "email",
+    "deliverability",
+    "spf",
+    "dkim",
+    "dmarc",
+    "bimi",
+    "blacklist",
+    "dns"
+  ]
 }
