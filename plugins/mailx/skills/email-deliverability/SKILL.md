@@ -16,6 +16,7 @@ Use the mailX tools (`mailx` server) to diagnose, audit and fix email authentica
 
 | Tool | Use it when |
 |------|-------------|
+| `audit_domain` | The user asks why their emails go to spam or wants a full deliverability check of a domain. Runs SPF, DKIM (finds the selector on its own), DMARC, blacklist and MX checks in one call and returns pass, warning or fail for each, an overall result, and the fixes in priority order with help links. Takes about 10 seconds. |
 | `spf_check` | The user asks whether a domain's SPF record is valid, which servers may send email for a domain, or why SPF fails. Returns the live SPF record, a pass/fail status and a fix suggestion. |
 | `dkim_check` | The user wants to verify DKIM for a domain. Pass the selector if known (for example `google` for Google Workspace, `selector1` or `selector2` for Microsoft 365). If it is unknown, omit it: mailX tries common selectors and returns the ones it finds. A miss on common selectors does not prove DKIM is absent. |
 | `dmarc_check` | The user asks about DMARC, spoofing protection, or what happens to emails that fail authentication. Returns the live record, its policy and a fix suggestion. |
@@ -37,11 +38,11 @@ Ask for the domain if it is missing. Each check result carries a fix suggestion 
 
 When emails go to spam or the user wants a domain checked:
 
-1. **Run in parallel**: `spf_check`, `dmarc_check`, `dkim_check` (without a selector unless the user gave one) and `blacklist_check`.
-2. **DKIM not found**: say the selector was not found, not that DKIM is missing. Ask for the `s=` value from the DKIM-Signature header of an email they sent, then call `dkim_check` again with it.
+1. **Run** `audit_domain` with the domain (and the DKIM selector, only if the user gave one). It runs SPF, DKIM, DMARC, blacklist and MX checks in one call. Use the single-check tools only to re-check one item or dig deeper.
+2. **DKIM not found**: say the selector was not found, not that DKIM is missing. Ask for the `s=` value from the DKIM-Signature header of an email they sent, then call `dkim_check` with it.
 3. **Analyze**: read [references/diagnosis.md](references/diagnosis.md) to interpret the combined results.
-4. **Fix**: generate missing or broken records with `spf_generate` or `dmarc_generate`.
-5. **Report**: lead with a pass/fail summary. For each failure, give the exact DNS record to add as Type | Name | Value.
+4. **Fix**: follow the `fixes` list in the order returned. Generate missing or broken records with `spf_generate` or `dmarc_generate`.
+5. **Report**: lead with the overall result and a pass/warning/fail summary. For each failure, give the exact DNS record to add as Type | Name | Value.
 
 The `/mailx:audit` command runs this workflow.
 

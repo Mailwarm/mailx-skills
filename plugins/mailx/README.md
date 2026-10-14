@@ -1,6 +1,6 @@
 # mailX for Claude
 
-mailX checks why emails land in spam and how to fix it. Ask Claude to audit a domain and it checks SPF, DKIM (it finds the selector on its own), DMARC, BIMI and major blacklists, explains each result in plain language, and gives you the exact DNS records to publish. It can also generate SPF and DMARC records, look up MX, TXT, CNAME, PTR and other DNS records, and find the SMTP or IMAP settings of common email providers.
+mailX checks why emails land in spam and how to fix it. Ask Claude to audit a domain and it checks SPF, DKIM (it finds the selector on its own), DMARC, MX and major blacklists in one call, plus BIMI on request, explains each result in plain language, and gives you the exact DNS records to publish. It can also generate SPF and DMARC records, look up MX, TXT, CNAME, PTR and other DNS records, and find the SMTP or IMAP settings of common email providers.
 
 ## What's included
 
