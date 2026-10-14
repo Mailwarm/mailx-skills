@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "mailx": {
+      "type": "http",
+      "url": "https://themailx.com/mcp/claude"
+    }
+  }
+}

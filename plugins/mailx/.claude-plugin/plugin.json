@@ -1,0 +1,14 @@
+{
+  "name": "mailx",
+  "displayName": "mailX",
+  "description": "Email deliverability checks in Claude: SPF, DKIM, DMARC, BIMI, blacklists and DNS lookups, plus SPF/DMARC record generation, through the mailX server.",
+  "version": "2.0.0",
+  "author": {
+    "name": "Mailwarm Inc.",
+    "url": "https://themailx.com"
+  },
+  "homepage": "https://themailx.com/docs/mcp",
+  "repository": "https://github.com/Mailwarm/mailx-skills",
+  "license": "MIT",
+  "keywords": ["email", "deliverability", "spf", "dkim", "dmarc", "bimi", "blacklist", "dns"]
+}

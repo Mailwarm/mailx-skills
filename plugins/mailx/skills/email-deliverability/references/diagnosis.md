@@ -39,7 +39,7 @@ Not a failure, but no protection. Recommend:
 
 ### DKIM not found
 
-Confirm the correct selector before concluding it's missing. Try: `google`, `default`, `selector1`, `selector2`, `k1`, `s1`, `dkim`. If truly absent, the user must enable DKIM in their email provider's admin panel.
+Confirm the correct selector before concluding it's missing. Call `dkim_check` without a selector to try common ones, or read the `s=` value from the DKIM-Signature header of an email the user sent. A miss on common selectors does not prove DKIM is absent. If truly absent, the user must enable DKIM in their email provider's admin panel.
 
 ## Provider Quick Reference
 
@@ -47,7 +47,7 @@ Confirm the correct selector before concluding it's missing. Try: `google`, `def
 |----------|------------|----------------|-------|
 | Google Workspace | `include:_spf.google.com` | `google` | Enable in Admin Console > Gmail > Authenticate email |
 | Microsoft 365 | `include:spf.protection.outlook.com` | `selector1`, `selector2` | Enable in Microsoft 365 Defender |
-| SendGrid | `include:sendgrid.net` | `s1`, `s2` | |
+| SendGrid | None on the root domain | `s1`, `s2` | SPF is handled by the `em####` return-path CNAME created by domain authentication |
 | Mailgun | `include:mailgun.org` | Varies per domain | Check Mailgun dashboard |
-| Amazon SES | `include:amazonses.com` | 3 CNAME records | Provided in SES console |
-| Postmark | `include:spf.mtasv.net` | CNAME record | Provided in Postmark dashboard |
+| Amazon SES | None on the root domain | 3 CNAME records | For DMARC alignment, set a custom MAIL FROM subdomain with `include:amazonses.com` (never at the root) |
+| Postmark | None on the root domain | CNAME record | SPF is handled by the `pm-bounces` Return-Path CNAME; `spf.mtasv.net` no longer publishes an SPF record |
