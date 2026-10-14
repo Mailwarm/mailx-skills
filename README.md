@@ -33,7 +33,9 @@ mailx-skills/
 │   └── marketplace.json
 └── plugins/
     └── mailx/
-        ├── .claude-plugin/plugin.json
+        ├── .claude-plugin/
+        │   ├── plugin.json
+        │   └── icon.png
         ├── .mcp.json
         ├── README.md
         ├── LICENSE

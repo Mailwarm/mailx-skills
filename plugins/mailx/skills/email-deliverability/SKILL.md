@@ -16,7 +16,7 @@ Use the mailX tools (`mailx` server) to diagnose, audit and fix email authentica
 
 | Tool | Use it when |
 |------|-------------|
-| `audit_domain` | The user asks why their emails go to spam or wants a full deliverability check of a domain. Runs SPF, DKIM (finds the selector on its own), DMARC, blacklist and MX checks in one call and returns pass, warning or fail for each, an overall result, and the fixes in priority order with help links. Takes about 10 seconds. |
+| `audit_domain` | The user asks why their emails go to spam or wants a full deliverability check of a domain. Runs SPF, DKIM (finds the selector on its own), DMARC, blacklist and MX checks in one call and returns pass, warning or fail for each, an overall result, and the fixes in priority order with help links. Takes a few seconds. |
 | `spf_check` | The user asks whether a domain's SPF record is valid, which servers may send email for a domain, or why SPF fails. Returns the live SPF record, a pass/fail status and a fix suggestion. |
 | `dkim_check` | The user wants to verify DKIM for a domain. Pass the selector if known (for example `google` for Google Workspace, `selector1` or `selector2` for Microsoft 365). If it is unknown, omit it: mailX tries common selectors and returns the ones it finds. A miss on common selectors does not prove DKIM is absent. |
 | `dmarc_check` | The user asks about DMARC, spoofing protection, or what happens to emails that fail authentication. Returns the live record, its policy and a fix suggestion. |
